@@ -1,0 +1,40 @@
+body{
+    background-color: black;
+    background-image: url(images/parche.png);
+    background-repeat: no-repeat;
+    background-position: left 55% bottom 100%;
+}
+h1{
+    background-color: darkorange;
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.container{
+    background-color: #ffcc00;
+    max-width: 500px;
+    max-height: 400px;
+    overflow: hidden;
+    margin: 15% 25% 15%;
+    box-shadow: 0px 0px 10px #777;
+    border: 1px solid black;
+}
+
+@keyframes defilement{
+    0%{transform: translate(0,0);}
+    100%{transform: translate(-80%,0);}
+}
+
+.diapo{
+    border-top: 1px solid black;
+    width: 400%;
+    padding-top: 75%;
+    background-color: #EDEDED;
+    background-image: url("images/abc.jpg");
+    background-size: contain;
+    animation: defilement 10s linear infinite;
+}    
+.diapo:hover{
+    animation-play-state: paused;
+}

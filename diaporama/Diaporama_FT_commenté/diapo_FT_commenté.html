@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Actions utilisateur et JavaScript</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+<script>
+    var alecran = 'unchat';//déclaration d'une variable alecran ayant pour valeur la chaine de caractere "unchat"
+    function diaporama () // création d'une fonction nommé "diaporama" 
+    {  
+        if (alecran == 'unchat') // condition qui vérifie si "alecran" a pour valeur "unchat"
+        { 
+            //remplace l'attribut "src=images/chat.jpg" par "src=images/chien.jpg" qui a pour id "diapo"
+            document.getElementById('diapo').setAttribute('src','images/chien.jpg');
+            // affectation de la chaine de caractere "un chien" a la variable "alecran"
+            alecran = 'unchien';
+        } else {
+            //remplace l'attribut "src=images/chien.jpg" par "src=images/chat.jpg" qui a pour id "diapo"
+            document.getElementById('diapo').setAttribute('src','images/chat.jpg');
+            // affectation de la chaine de caractere "un chat" a la variable "alecran"
+            alecran = 'unchat';
+        }
+    }
+</script>
+</head>
+<!--   onload = Au lancement, on creer une variable "chienchat" qui a pour attribut un intervalle d'une durée de 3 secondes. La fonction setinterval a pour parametre la fonction diaporama, ce qui signifie que toutes les 3 secondes la fonction diaporama va s'éxécuter et donc va intervertir l'image du chien et l'image du chat -->
+    <body onload="chienchat = setInterval('diaporama();',3000);">
+<!--        titre h1-->
+        <h1>Actions utilisateur et JavaScript</h1>
+<!--        titre h2-->
+        <h2>Diaporama automatique</h2>
+<!--        div  qui a pour class  "illustration" -->
+        <div class="illustration">
+<!--        insertion d'une image ayant pour id "diapo", un alt  qui vaut "un chat", et comme hauteur 200px-->
+            <img id="diapo" src="images/chat.jpg" alt="un chat" height="200" />
+        </div>
+<!--        lorsque vous appuyez sur le bouton arret, l'intervalle en cour va s'arreter grâce a la fonction clearInterval. -->
+<!--        on lui donne comme parametre la variable chienchat qui avait un intervalle -->
+        <button onclick="clearInterval(chienchat);">Arrêt</button>
+<!--            En appuyant sur le bouton "marche" l'attribut onclick va s'éxécuter et donc va relancer un intervalle, d'une durée de 2 secondes-->
+        <button onclick="chienchat = setInterval('diaporama();',2000);">Marche</button>
+    </body>
+</html>
