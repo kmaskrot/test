@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin-left: 20%;
+}
+table tr td{
+    border-bottom:1px solid black;
+    text-align: center;
+      background-color: #d8d8d8;
+    font-family: arial;
+  
+    
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    color: black;
+  
+}
+
+a:hover{
+    color:red
+}
+
+.pays{
+    border: none;
+    background-color: white
+}
